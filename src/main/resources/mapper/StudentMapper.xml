@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.duoduo.ddschool.dao.StudentMapper">
+<resultMap id="StudentResultMap" type="com.duoduo.ddschool.beans.Student">
+    <id column="name" property="name"/>
+    <id column="age" property="age"/>
+    <id column="sex" property="sex"/>
+    <id column="note" property="note"/>
+    <id column="id" property="id"/>
+</resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,sex,note,age
+    </sql>
+
+    <select id="selectList" resultMap="StudentResultMap">
+        select <include refid="Base_Column_List"/>
+        from student
+    </select>
+</mapper>

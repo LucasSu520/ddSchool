@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Klass {
+public class Klass extends DataBaseBean{
     private String name;
 
     private String number;

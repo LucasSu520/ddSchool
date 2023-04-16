@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student {
+public class Student extends DataBaseBean{
     private String name;
 
     /** 学生的性别，其中0代表女孩，1代表男孩 */
