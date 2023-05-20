@@ -32,6 +32,7 @@ public class StudentController {
     public List<Student> queryList(@PathVariable String name) {
 //        如果需要在这里统计在线人数，就在访问的controller层当中添加上这行代码
 //        this.request.getSession().setAttribute("online", new OnlineUserListener(name));
+        System.out.println("duoduoduo");
         return studentService.queryList();
     }
 }

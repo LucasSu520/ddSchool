@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.duoduo.ddschool.dao.UserMapper">
+<resultMap id="UserResultMap" type="com.duoduo.ddschool.beans.User">
+    <id column="user_name" property="account"/>
+    <id column="password" property="password"/>
+</resultMap>
+    <sql id="Base_common_list">
+        user_name,password
+    </sql>
+
+    <select id="selectUserByPwd" resultMap="UserResultMap">
+        select <include refid="Base_common_list"/>
+        from user u
+        where
+        u.user_name = #{user_name}
+    </select>
+</mapper>
